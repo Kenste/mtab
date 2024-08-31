@@ -141,6 +141,7 @@ export const renderBlockBookmark = (
         <div class="bookmark-icon${iconSizeClass && " " + iconSizeClass}"${bookmarkIconColor && ` style="color: ${bookmarkIconColor};"`}>
           ${iconHTML}
         </div>
+        <div>${bookmarkName}</div>
       </div>
     </button>
   `;
@@ -300,6 +301,7 @@ export const renderBlockBookmarkFolder = (
         <div class="bookmark-icon${iconSizeClass && " " + iconSizeClass}"${bookmarkIconColor && ` style="color: ${bookmarkIconColor};"`}>
           ${iconHTML}
         </div>
+        <div>${bookmarkName}</div>
       </div>
     </button>
   `;
