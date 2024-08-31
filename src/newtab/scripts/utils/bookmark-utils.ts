@@ -136,7 +136,6 @@ export const renderBlockBookmark = (
       animationsEnabled ? `${animationsInitialType} opacity-0 outline-none` : ""
     }" ${animationsEnabled ? `style="animation-delay: ${delay}ms;"` : ""}>
       <div id="bookmark-${bookmarkId}-${bookmarkIndex}-border" class="absolute w-full h-full border-2 border-transparent rounded-md"></div>
-      <div class="h-1" style="background-color: ${bookmarkColor}"></div>
       <div class="absolute w-full h-full hover:bg-white/20"></div>
       <div class="p-1 md:p-2 grid place-items-center h-full">
         <div class="bookmark-icon${iconSizeClass && " " + iconSizeClass}"${bookmarkIconColor && ` style="color: ${bookmarkIconColor};"`}>
@@ -297,7 +296,6 @@ export const renderBlockBookmarkFolder = (
   containerEl.innerHTML += `
     <button id="bookmark-${bookmarkId}-${bookmarkIndex}" class="relative duration-[250ms] ease-out bg-foreground cursor-pointer ${uiStyle === "glass" ? "glass-effect" : ""} rounded-md h-bookmark overflow-hidden ${animationsEnabled ? `${animationsInitialType} opacity-0 outline-none` : ""}" ${animationsEnabled ? `style="animation-delay: ${delay}ms;"` : ""}>
       <div id="bookmark-${bookmarkId}-${bookmarkIndex}-border" class="absolute w-full h-full border-2 border-transparent rounded-md"></div>
-      <div class="h-1" style="background-color: ${bookmarkColor}"></div>
       <div class="absolute w-full h-full hover:bg-white/20"></div>
       <div class="p-1 md:p-2 grid place-items-center h-full">
         <div class="bookmark-icon${iconSizeClass && " " + iconSizeClass}"${bookmarkIconColor && ` style="color: ${bookmarkIconColor};"`}>
