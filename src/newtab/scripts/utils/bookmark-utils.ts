@@ -97,6 +97,7 @@ export const renderBlockBookmark = (
   bookmarksLength: number,
   bookmarkIndex: number,
   bookmarkName: string,
+  bookmarkId: string,
   bookmarkColor: string,
   bookmarkIconColor: string | null,
   bookmarkIconType: string | null,
@@ -129,12 +130,12 @@ export const renderBlockBookmark = (
 
   // prettier-ignore
   containerEl.innerHTML += `
-    <button id="bookmark-${bookmarkName}-${bookmarkIndex}" class="relative duration-[250ms] ease-out bg-foreground cursor-pointer ${
+    <button id="bookmark-${bookmarkId}-${bookmarkIndex}" class="relative duration-[250ms] ease-out bg-foreground cursor-pointer ${
       uiStyle === "glass" ? "glass-effect" : ""
     } rounded-md h-bookmark overflow-hidden ${
       animationsEnabled ? `${animationsInitialType} opacity-0 outline-none` : ""
     }" ${animationsEnabled ? `style="animation-delay: ${delay}ms;"` : ""}>
-      <div id="bookmark-${bookmarkName}-${bookmarkIndex}-border" class="absolute w-full h-full border-2 border-transparent rounded-md"></div>
+      <div id="bookmark-${bookmarkId}-${bookmarkIndex}-border" class="absolute w-full h-full border-2 border-transparent rounded-md"></div>
       <div class="h-1" style="background-color: ${bookmarkColor}"></div>
       <div class="absolute w-full h-full hover:bg-white/20"></div>
       <div class="p-1 md:p-2 grid place-items-center h-full">
@@ -261,6 +262,7 @@ export const renderBlockBookmarkFolder = (
   bookmarksLength: number,
   bookmarkIndex: number,
   bookmarkName: string,
+  bookmarkId: string,
   bookmarkColor: string,
   bookmarkIconColor: string | null,
   bookmarkIconType: string | null,
@@ -293,8 +295,8 @@ export const renderBlockBookmarkFolder = (
 
   // prettier-ignore
   containerEl.innerHTML += `
-    <button id="bookmark-${bookmarkName}-${bookmarkIndex}" class="relative duration-[250ms] ease-out bg-foreground cursor-pointer ${uiStyle === "glass" ? "glass-effect" : ""} rounded-md h-bookmark overflow-hidden ${animationsEnabled ? `${animationsInitialType} opacity-0 outline-none` : ""}" ${animationsEnabled ? `style="animation-delay: ${delay}ms;"` : ""}>
-      <div id="bookmark-${bookmarkName}-${bookmarkIndex}-border" class="absolute w-full h-full border-2 border-transparent rounded-md"></div>
+    <button id="bookmark-${bookmarkId}-${bookmarkIndex}" class="relative duration-[250ms] ease-out bg-foreground cursor-pointer ${uiStyle === "glass" ? "glass-effect" : ""} rounded-md h-bookmark overflow-hidden ${animationsEnabled ? `${animationsInitialType} opacity-0 outline-none` : ""}" ${animationsEnabled ? `style="animation-delay: ${delay}ms;"` : ""}>
+      <div id="bookmark-${bookmarkId}-${bookmarkIndex}-border" class="absolute w-full h-full border-2 border-transparent rounded-md"></div>
       <div class="h-1" style="background-color: ${bookmarkColor}"></div>
       <div class="absolute w-full h-full hover:bg-white/20"></div>
       <div class="p-1 md:p-2 grid place-items-center h-full">
@@ -383,6 +385,7 @@ export const renderDefaultBlockyBookmarksNodes = (
         config.animations.bookmarkTiming,
         nodes.length,
         index,
+        folder.title,
         folder.id,
         config.bookmarks.defaultBlockyColor,
         config.bookmarks.defaultBlockyColor,
@@ -398,6 +401,7 @@ export const renderDefaultBlockyBookmarksNodes = (
         config.animations.bookmarkTiming,
         nodes.length,
         index,
+        node.title,
         node.id,
         config.bookmarks.defaultBlockyColor,
         null,
